@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_module_type_vehicle_bays",
+  "info": {
+    "displayName": "Vehicle Bay",
+    "icon": "truck-pickup",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "vehicle": {
+      "type": "enumeration",
+      "enum": [
+        "atv",
+        "votl-gyrocar",
+        "apc",
+        "daihotai-tractor"
+      ],
+      "required": true
+    }
+  }
+}

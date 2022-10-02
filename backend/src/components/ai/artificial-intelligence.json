@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_ai_artificial_intelligences",
+  "info": {
+    "displayName": "Artificial Intelligence",
+    "icon": "brain"
+  },
+  "options": {},
+  "attributes": {
+    "system": {
+      "type": "enumeration",
+      "enum": [
+        "apollo",
+        "muthur_6000",
+        "muthur_6500",
+        "muthur_7000",
+        "muthur_9000"
+      ],
+      "required": true
+    }
+  }
+}

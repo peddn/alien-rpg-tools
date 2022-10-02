@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_ship_systems",
+  "info": {
+    "displayName": "System",
+    "icon": "cube",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "online": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    }
+  }
+}

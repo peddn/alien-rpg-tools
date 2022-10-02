@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_module_type_emergency_escape_vehicles",
+  "info": {
+    "displayName": "Emergency Escape Vehicle",
+    "icon": "life-ring"
+  },
+  "options": {},
+  "attributes": {
+    "class": {
+      "type": "enumeration",
+      "enum": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "required": true
+    }
+  }
+}

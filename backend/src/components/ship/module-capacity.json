@@ -1,0 +1,56 @@
+{
+  "collectionName": "components_ship_module_capacities",
+  "info": {
+    "displayName": "Module Capacities",
+    "icon": "weight-hanging",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "sizeOne": {
+      "type": "integer",
+      "default": 0,
+      "min": 0,
+      "required": true,
+      "column": {
+        "defaultTo": 0
+      }
+    },
+    "sizeTwo": {
+      "type": "integer",
+      "default": 0,
+      "min": 0,
+      "required": true,
+      "column": {
+        "defaultTo": 0
+      }
+    },
+    "sizeThree": {
+      "type": "integer",
+      "default": 0,
+      "min": 0,
+      "required": true,
+      "column": {
+        "defaultTo": 0
+      }
+    },
+    "sizeFour": {
+      "type": "integer",
+      "default": 0,
+      "min": 0,
+      "required": true,
+      "column": {
+        "defaultTo": 0
+      }
+    },
+    "sizeFive": {
+      "type": "integer",
+      "default": 0,
+      "min": 0,
+      "required": true,
+      "column": {
+        "defaultTo": 0
+      }
+    }
+  }
+}

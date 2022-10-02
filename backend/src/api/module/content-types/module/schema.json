@@ -1,0 +1,105 @@
+{
+  "kind": "collectionType",
+  "collectionName": "modules",
+  "info": {
+    "singularName": "module",
+    "pluralName": "modules",
+    "displayName": "Module",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "size": {
+      "type": "integer",
+      "min": 1,
+      "max": 5,
+      "default": 1,
+      "required": true
+    },
+    "name": {
+      "type": "enumeration",
+      "enum": [
+        "artificial_intelligence_apollo",
+        "artificial_intelligence_muthur_6000",
+        "artificial_intelligence_muthur_6500",
+        "artificial_intelligence_muthur_7000",
+        "artificial_intelligence_muthur_9000",
+        "air_scrubbers_1",
+        "air_scrubbers_2",
+        "air_scrubbers_3",
+        "air_scrubbers_4",
+        "cargo_bay_1",
+        "cargo_bay_2",
+        "cargo_bay_3",
+        "cargo_bay_4",
+        "cargo_bay_5",
+        "corporate_suite",
+        "cryo_deck_1",
+        "cryo_deck_2",
+        "cryo_deck_3",
+        "cryo_deck_4",
+        "cryo_deck_5",
+        "docking_umbilical",
+        "emergency_escape_vehicle_1",
+        "emergency_escape_vehicle_2",
+        "emergency_escape_vehicle_3",
+        "emergency_escape_vehicle_4",
+        "galley_1",
+        "galley_2",
+        "galley_3",
+        "galley_4",
+        "galley_5",
+        "hangar_1",
+        "hangar_2",
+        "hangar_3",
+        "hangar_4",
+        "hangar_5",
+        "medlab",
+        "salvage_crane",
+        "science_lab",
+        "tractor_hitch",
+        "vehicle_bay_1",
+        "vehicle_bay_2",
+        "vehicle_bay_3_apc",
+        "vehicle_bay_3_daihotai-tractor",
+        "vehicle_bay_4",
+        "vehicle_bay_5"
+      ],
+      "required": true
+    },
+    "capacity": {
+      "type": "integer",
+      "min": 0,
+      "required": false
+    },
+    "type": {
+      "type": "dynamiczone",
+      "components": [
+        "ai.artificial-intelligence",
+        "module-type.emergency-escape-vehicle",
+        "module-type.hangar",
+        "module-type.vehicle-bay"
+      ],
+      "max": 1,
+      "min": 0
+    },
+    "price": {
+      "type": "integer",
+      "min": 0,
+      "required": true
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "utility",
+        "mobility",
+        "life-support",
+        "ai",
+        "cargo"
+      ]
+    }
+  }
+}

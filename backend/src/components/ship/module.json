@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_ship_modules",
+  "info": {
+    "displayName": "Modules",
+    "icon": "vector-square",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "module": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::module.module"
+    },
+    "online": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    }
+  }
+}

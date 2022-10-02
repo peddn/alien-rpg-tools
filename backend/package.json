@@ -1,0 +1,30 @@
+{
+  "name": "alien-rpg-tools-backend",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "@strapi/strapi": "4.3.4",
+    "@strapi/plugin-users-permissions": "4.3.4",
+    "@strapi/plugin-i18n": "4.3.4",
+    "better-sqlite3": "7.6.2"
+  },
+  "author": {
+    "name": "public@peddn.net"
+  },
+  "strapi": {
+    "uuid": "eb31c49b-7ab6-426b-a8ce-003c5822fb22"
+  },
+  "engines": {
+    "node": ">=12.x.x <=16.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}

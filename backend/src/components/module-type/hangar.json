@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_module_type_hangars",
+  "info": {
+    "displayName": "Hangar",
+    "icon": "space-shuttle"
+  },
+  "options": {},
+  "attributes": {
+    "shipClass": {
+      "type": "enumeration",
+      "enum": [
+        "A",
+        "B",
+        "C-D",
+        "E-G",
+        "H-M"
+      ],
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "collectionName": "components_ship_attrs",
+  "info": {
+    "displayName": "Attrs",
+    "icon": "dot-circle",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ftl": {
+      "type": "integer",
+      "default": 0,
+      "required": true,
+      "min": 0,
+      "column": {
+        "defaultTo": 0
+      }
+    },
+    "signature": {
+      "type": "integer",
+      "default": 0,
+      "required": true,
+      "column": {
+        "defaultTo": 0
+      }
+    },
+    "thrusters": {
+      "type": "integer",
+      "default": 0,
+      "required": true,
+      "column": {
+        "defaultTo": 0
+      }
+    },
+    "hull": {
+      "type": "integer",
+      "default": 0,
+      "min": 0,
+      "required": true,
+      "column": {
+        "defaultTo": 0
+      }
+    },
+    "armor": {
+      "type": "integer",
+      "default": 0,
+      "min": 0,
+      "required": true,
+      "column": {
+        "defaultTo": 0
+      }
+    }
+  }
+}

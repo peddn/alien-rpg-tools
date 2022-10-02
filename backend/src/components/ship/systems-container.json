@@ -1,0 +1,56 @@
+{
+  "collectionName": "components_ship_systems_containers",
+  "info": {
+    "displayName": "Systems",
+    "icon": "cubes",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "mainAirlock": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ship.system"
+    },
+    "artificialGravity": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ship.system"
+    },
+    "intercom": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ship.system"
+    },
+    "ladderway": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ship.system"
+    },
+    "lifeSupport": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ship.system"
+    },
+    "navigation": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ship.system"
+    },
+    "refrigerationUnit": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ship.system"
+    },
+    "transponder": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ship.system"
+    },
+    "wasteDisposal": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ship.system"
+    }
+  }
+}
