@@ -11,6 +11,7 @@ appStore.$subscribe((mutation, state) => {
 const hideError = (id) => {
     const errorDiv = document.getElementById('error_' + id)
     errorDiv.classList.add('hidden')
+    errorDiv.remove()
 }
 
 </script>
