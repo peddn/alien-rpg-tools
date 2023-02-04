@@ -1,30 +1,34 @@
 const webpack = require('webpack')
 const { merge } = require('webpack-merge')
 
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HtmlWebpackPlugin    = require('html-webpack-plugin')
 
 const common = require('./webpack.common.js')
-module.exports = merge(common, {
 
+module.exports = merge(common, {
     mode: 'production',
     module: {
         rules: [
             {
-                test: /\.css$/,
+                test: /\.scss$/,
+                exclude: /node_modules/,
                 use: [
-                    MiniCssExtractPlugin.loader,
-                    'css-loader',
-                    'postcss-loader'
+                    {
+                        loader: 'file-loader',
+                        options: { outputPath: 'css/', name: '[name].bundle.css'}
+                    },
+                    'sass-loader'
                 ]
-            },
+            }
         ]
     },
     plugins: [
-        new MiniCssExtractPlugin({
-            filename: 'css/[name].bundle.css',
+        new HtmlWebpackPlugin({
+            title: 'Production',
+            template: 'src/template.html',
+            inject: 'body'
         }),
         new webpack.DefinePlugin({
-            BASE_URL: JSON.stringify(process.env.BASE_URL),
             __VUE_OPTIONS_API__: false,
             __VUE_PROD_DEVTOOLS__: false
         })

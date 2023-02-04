@@ -1,12 +1,14 @@
-const path                = require('path')
+const path                 = require('path')
 
-const Dotenv              = require('dotenv-webpack')
-const HtmlWebpackPlugin   = require('html-webpack-plugin')
-const { VueLoaderPlugin } = require('vue-loader')
-const CopyPlugin          = require('copy-webpack-plugin')
+const Dotenv               = require('dotenv-webpack')
+const { VueLoaderPlugin }  = require('vue-loader')
+const CopyPlugin           = require('copy-webpack-plugin')
 
 module.exports = {
-    entry: './src/js/main.js',
+    entry: [
+        __dirname + '/src/js/main.js',
+        __dirname + '/src/scss/main.scss'
+    ],
     output: {
         filename: 'js/[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
@@ -15,17 +17,6 @@ module.exports = {
     },
     module: {
         rules: [
-            {
-                test: /\.s[ac]ss$/i,
-                use: [
-                  // Creates `style` nodes from JS strings
-                  "style-loader",
-                  // Translates CSS into CommonJS
-                  "css-loader",
-                  // Compiles Sass to CSS
-                  "sass-loader",
-                ],
-            },
             {
                 test: /\.vue$/,
                 loader: 'vue-loader'
@@ -42,11 +33,6 @@ module.exports = {
     },
     plugins: [
         new Dotenv(),
-        new HtmlWebpackPlugin({
-            title: 'Development',
-            template: 'src/template.html',
-            inject: 'body'
-        }),
         new VueLoaderPlugin(),
         new CopyPlugin({
             patterns: [
