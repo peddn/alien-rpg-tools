@@ -1,4 +1,3 @@
-
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
@@ -7,7 +6,7 @@ import { useAppStore } from './app.js'
 export const useShipStore = defineStore('ship', () => {
     const endpoint = 'ships/'
     const populate = 'populate[attrs]=*&populate[systems][populate]=*&populate[moduleCapacities]=*&populate[modules]=*'
-    const bearer   = 'd75f7228abb51332e08e12dbd53786cfec816b9966e432a0fcb63c982f1c50a7f3173689359c43b28a089440bb19116e67247ad3221701f595e63a8a46d58973582935d7aa41e9aaec4c60db7ec80178e2a982f33d995c45aaa36a418200a1fcf49f789c4dd1714489003d7b8c5d046288fee84f2b2c97e0d8c535e8cb57c651'
+    const bearer   = 'b7e41ab2d56c288b002bee53ebada137e07bf2ccc810bfc04e7963e7a894ffa21f8d1fb6e725780657c756f646fdf62d5a75946fa5d160afd353e7460a10007001260a462b19dafbd84ac2acf3e7279a6b65e5a1a30216dd6593798dd5096fc5e7fbd4ddede6a940b86a4c6a6131f6987aef507e2f4b57a9864b0014ac2911df'
     
     const id = ref(1)
     const ship = ref(null)
@@ -19,7 +18,7 @@ export const useShipStore = defineStore('ship', () => {
         try {
             const response = await fetch(
                 // eslint-disable-next-line no-undef
-                BASE_URL + endpoint + id + '?' + populate,
+                process.env.BASE_URL + endpoint + id + '?' + populate,
                 {
                     method: 'GET',
                     headers: {
@@ -27,11 +26,18 @@ export const useShipStore = defineStore('ship', () => {
                         'Authorization': 'Bearer ' + bearer
                     },
                 })
-                .then((response) => response.json())
+                .then((response) => {
+                    return response.json()
+                })
             ship.value = response.data.attributes
             appStore.ship.loaded = true
             appStore.ship.loading = false
         } catch(error) {
+            console.log(error.message)
+            if(error.message === 'response.data is null') {
+                error.name    = 'Keine Daten vorhanden.'
+                error.message = 'Es liegen keine Daten zur Anzeige vor.' 
+            }
             appStore.addError(error)
             ship.value = null
             appStore.ship.loaded = false

@@ -10,16 +10,10 @@
     "strapi": "strapi"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "@strapi/strapi": "4.5.1",
-    "@strapi/plugin-users-permissions": "4.5.1",
-    "@strapi/plugin-i18n": "4.5.1",
-=======
-    "@strapi/plugin-i18n": "4.4.1",
-    "@strapi/plugin-users-permissions": "4.4.1",
-    "@strapi/strapi": "4.4.1",
->>>>>>> c6407e1e96da02776443c070b22ed9de2c6c9113
-    "better-sqlite3": "7.6.2"
+    "@strapi/strapi": "4.6.0",
+    "@strapi/plugin-users-permissions": "4.6.0",
+    "@strapi/plugin-i18n": "4.6.0",
+    "better-sqlite3": "8.0.1"
   },
   "author": {
     "name": "public@peddn.net"
@@ -28,7 +22,7 @@
     "uuid": "eb31c49b-7ab6-426b-a8ce-003c5822fb22"
   },
   "engines": {
-    "node": ">=12.x.x <=16.x.x",
+    "node": ">=12.x.x <=18.x.x",
     "npm": ">=6.0.0"
   },
   "license": "MIT"

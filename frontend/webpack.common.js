@@ -1,7 +1,9 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path                = require('path')
+
+const Dotenv              = require('dotenv-webpack')
+const HtmlWebpackPlugin   = require('html-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
-const CopyPlugin = require('copy-webpack-plugin')
+const CopyPlugin          = require('copy-webpack-plugin')
 
 module.exports = {
     entry: './src/js/main.js',
@@ -28,6 +30,7 @@ module.exports = {
         ],
     },
     plugins: [
+        new Dotenv(),
         new HtmlWebpackPlugin({
             title: 'Development',
             template: 'src/template.html',
