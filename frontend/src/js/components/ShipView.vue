@@ -1,40 +1,45 @@
 <script setup>
-import { onMounted } from 'vue'
-import { useRouter } from 'vue-router'
+  import { onMounted } from 'vue'
+  import { useRouter, onBeforeRouteLeave } from 'vue-router'
 
-import { useShipStore } from '../stores/ship.js'
-import { useAppStore } from '../stores/app.js'
+  import { useShipStore } from '../stores/ship.js'
+  import { useAppStore } from '../stores/app.js'
 
-const router = useRouter()
+  const router = useRouter()
 
-const shipStore = useShipStore()
-const appStore = useAppStore()
+  const shipStore = useShipStore()
+  const appStore = useAppStore()
 
+  onBeforeRouteLeave((to, from) => {
+    appStore.setMenuItemActive(to.name)
+  })
 
-onMounted(() => {
-})
+  onMounted(() => {})
 
-const routeHandler = (path, event) => {
+  const routeHandler = (path, event) => {
     event.preventDefault()
     router.push({
-        path: path,
-        query: { filter: 1 }
+      path: path,
+      query: { filter: 1 },
     })
-}
+  }
 
-// reload the ship data when data is not loaded yet
-if (!appStore.ship.loaded) {
+  // reload the ship data when data is not loaded yet
+  if (!appStore.ship.loaded) {
     shipStore.reload(shipStore.id)
-}
-
+  }
 </script>
 
 <template>
-    <div v-if="appStore.ship.loading" class="loading">Loading...</div>
-    <div v-if="appStore.ship.loaded">
-        <h1 class="title">Ship</h1>
-        <p>Name: {{ shipStore.ship.name }}</p>
-        <button class="transition ease-in-out hover:scale-125" v-on:click="routeHandler('/browser', $event)">Test Rout
-            with query</button><br>
-    </div>
+  <div class="uk-position-center">
+    <div v-if="appStore.ship.loading" uk-spinner></div>
+  </div>
+
+  <div v-if="appStore.ship.loaded">
+    <h1>Ship</h1>
+    <p>Name: {{ shipStore.ship.name }}</p>
+    <button v-on:click="routeHandler('/browser', $event)">
+      Test Rout with query
+    </button>
+  </div>
 </template>
